@@ -93,6 +93,12 @@ footer {
     justify-content: start;
    
 }
+.logout{
+    display: flex;
+    background-color: rgb(233, 197, 131);
+    margin: 5px;
+    justify-content: start;
+}
 .card{
     width:115px;
     height:fit-content;

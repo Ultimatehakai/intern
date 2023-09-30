@@ -19,8 +19,8 @@ include "menu.html";
         background-image: url('../shared/images/updateimg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        display: ;
+        background-attachment: scroll;
+       
     }
 </style>
 

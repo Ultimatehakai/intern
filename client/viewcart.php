@@ -82,7 +82,7 @@ while($row=mysqli_fetch_assoc($sql_result)){
 
     <label for='quantity'>Quantity:</label>
     <input type='number' id='quantity' name='quantity' min='1' value='1'>
-    <input type='' name='product_price' value='$row[price]'>
+ 
     <span id='display'></span>
 
 

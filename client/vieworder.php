@@ -103,7 +103,7 @@ while($row=mysqli_fetch_assoc($sql_result))
 <head>
    <style>
 .title {
-    height:40px ;
+    height:60px ;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -116,7 +116,7 @@ while($row=mysqli_fetch_assoc($sql_result))
 </head>
 <body>
 <footer>
-        <p class="title"> 2023 Your Online Store</p>
+        <p class="title" >Free delivery on every Product<br> &copy;2023 Your Online Store</p>
     </footer>
 </body>
 </html>

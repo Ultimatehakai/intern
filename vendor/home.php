@@ -16,7 +16,7 @@ include "menu.html";
         background-image: url('../shared/images/footer-bg.png');
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment: scroll;
     }
 </style>
 

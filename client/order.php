@@ -14,7 +14,11 @@
 
         </div>
     </header>
-    <a  class="view " href="viewcart.php"><h2>view Cart</h2></a>
+    <a  class="view " href="vieworder.php"><h2>view Order</h2></a>
+    
+    
+
+
     <main>
         <section class="order-summary">
             <h2>Order Summary</h2>
@@ -59,7 +63,7 @@
                      }
                  }
              }
-             
+             $total=0;
              while($row=mysqli_fetch_assoc($sql_result))
              {
                 $total+=$row['price'] ;
@@ -109,12 +113,13 @@
                                             <ul class=" list-unstyled">
                                                 <li>
                                                     <label class="custom-control custom-radio  m-b-20">
-                                                        <input name="mod" id="radioStacked1" checked value="COD" type="radio" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Cash on Delivery</span>
+                                                    
+                                              <input type="radio" name="paymentMethod" value="cod" onclick="selectPaymentMethod('cod')"> Cash on Delivery (COD)
                                                     </label>
                                                 </li>
                                                 <li>
                                                     <label class="custom-control custom-radio  m-b-10">
-                                                        <input name="mod" type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Paypal <img src="../shared/images/paypal.jpg" alt="" width="90"></span> </label>
+                                                    <input type="radio" name="paymentMethod" value="gpay" onclick="selectPaymentMethod('gpay') "> Google Pay <img src="../shared/images/gpay.jpg" alt="" width="90"></label>
                                                 </li>
                                             </ul>
                                            
@@ -127,20 +132,25 @@
     <style>
         /* your styles go here */
     </style>
-    <footer>
+    <footer><h3>Free delivery on every Product</h3>
         <p>&copy; 2023. All rights reserved.</p>
     </footer>
 
     <script>
         function placeOrder() {
-            // Perform any necessary order processing here
-            // For this example, we'll show a simple alert message
-            alert("Thank you. Your Order has been placed!");
-            return false; // Prevent form submission (you can remove this in a real application)
+          
+            alert("Thankyou. Your Order has been palced!");
+            return false; 
         }
+        function selectPaymentMethod(method) {
+                                      if (method === 'cod') {
+                                       
+                                          alert('You have selected Cash on Delivery.');
+                                      } else if (method === 'gpay') {
+                                        
+                                          alert('You have selected Google Pay.');
+                                      }
+                                  }
     </script>
 </body>
 </html>
-
-
-
