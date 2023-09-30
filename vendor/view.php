@@ -31,7 +31,14 @@ include "menu.html";
         </style>
     </head>
     <body>
-        
+    <script>
+            function confirmDelete(pid){
+                res=confirm("Are sure you want to delete?")
+                if(res){
+                    window.location=`deleteproduct.php?pid=${pid}`;
+                }
+            }
+        </script>
     </body>
 
 </html>
@@ -47,7 +54,7 @@ $sql_result=mysqli_query($conn,"select * from product where uploaded_by=$_SESSIO
 while($row=mysqli_fetch_assoc($sql_result)){
   
     echo "<div class='card p-4 '>
-    <div class='delete btn'>X</div>
+    <button onclick=confirmDelete($row[pid]) class='delete btn'>X</button>
     <div class='name display-2'>$row[name]</div>
     <div class='price display-5 text-danger'>Rs.$row[price]</div>
     <img class='pdtimg' src='$row[impath]'>

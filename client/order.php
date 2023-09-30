@@ -135,7 +135,7 @@
         function placeOrder() {
             // Perform any necessary order processing here
             // For this example, we'll show a simple alert message
-            alert("Order placed successfully!");
+            alert("Thank you. Your Order has been placed!");
             return false; // Prevent form submission (you can remove this in a real application)
         }
     </script>
