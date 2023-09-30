@@ -1,30 +1,25 @@
 <?php
-
 include "authguard.php";
 
-print_r($_FILES["pdting"]["name"]);
+print_r($_FILES["pdtimg"]["name"]);
 
-print_r($_FILES["pdting"]["tmp_name"]); 
-// tmp_name is use for image file location
+print_r($_FILES["pdtimg"]["tmp_name"]);
 
-$impath="../shared/images/".$_FILES["pdting"]["name"];
+//"abc"."def" = abcdef
 
-move_uploaded_file($_FILES["pdting"]["tmp_name"],$impath);
+$impath="../shared/images/".$_FILES["pdtimg"]["name"];
+
+move_uploaded_file($_FILES["pdtimg"]["tmp_name"],$impath);
 
 include_once "../shared/connection.php";
 
-
-
-$status=mysqli_query($conn,"insert into product(name,price,detail,impath,uploaded_by)  
-values('$_POST[name]',$_POST[price],'$_POST[detail]','$impath',$_SESSION[userid])");
-
+$status=mysqli_query($conn,"insert into product(name,price,detail,impath,uploaded_by)  values('$_POST[name]',$_POST[price],'$_POST[detail]','$impath',$_SESSION[userid])");
 if($status){
-   echo "Product uploaded Successfully";
+    echo "Product uploaded Successfully";
 }
 else{
-   echo "Failed to upload product";
-   echo mysqli_error($conn);
+    echo "Failed to upload product";
+    echo mysqli_error($conn);
 }
 
 ?>
-

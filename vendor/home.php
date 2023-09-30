@@ -1,32 +1,37 @@
-<?php 
+<?php
 
 include "authguard.php";
 include "menu.html";
 
 ?>
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
-    <title>vendor home page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-<div class="d-flex justify-content-center align-items-center vh-100">
-    <form action="upload.php" class="w-27 bg-warning p-5 "method="post" enctype="multipart/form-data">
+    <div class="d-flex justify-content-center align-items-center vh-100">
 
-    <h3 class="text-center">Upload product</h3>
+    <form action="upload.php" class="w-25 bg-warning p-4" method="POST" enctype="multipart/form-data">
 
-    <input class="form-control mt-2" type="text" name="name" placeholder="product name">
-    <input class="form-control mt-2" type="number" name="price" placeholder="product price">
-    <input class="form-control mt-2" type="text" name="detail" placeholder="product discription" cols="30"
-    rows="5"></textarea>
-    <input class="form-control mt-2" type="file" name="pdting" accept=".jpg,.png">
-    <div class="text-center mt-3">
-        <button class="btn btn-danger">upload</button>
-    </div>
+    <h4 class="text-center">Upload Product</h4>
+
+        <input class="form-control mt-2" type="text" name="name" placeholder="Product Name">
+        <input class="form-control mt-2" type="number" name="price" placeholder="Product Price">
+        <textarea class="form-control mt-2" name="detail" placeholder="Product Description" cols="30" rows="5"></textarea>
+        <input class="form-control mt-2" type="file" name="pdtimg" accept=".jpg,.png">
+        <div class="text-center mt-3">
+            <button class='btn btn-danger'>Upload</button>
+        </div>
+
     </form>
-   </div>
 
+    </div>
 </body>
 </html>
